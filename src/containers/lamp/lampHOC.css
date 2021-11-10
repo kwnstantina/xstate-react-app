@@ -1,0 +1,17 @@
+.lamp-container {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  left: 25%;
+}
+.lamp {
+  width: 100%;
+}
+
+.light {
+  position: absolute;
+  top: 95%;
+  width: 600px;
+  left: 48%;
+  transform: translateX(-50%);
+}
