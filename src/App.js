@@ -1,58 +1,34 @@
-import React, { useState } from "react";
-import { createMachine, assign } from "xstate";
+import React, { useState,useRef} from "react";
 import { useMachine } from "@xstate/react";
 import Header from "./containers/header/header";
 import './App.css';
 import LampHOC from './containers/lamp/lampHOC';
 import MainTextHOC from './containers/mainText/mainTextHOC'
+import { LightCheckbox } from "./models/statecharts/states";
+import MultiFormHOC from './containers/multiForm/multiFormHOC';
+import AnimatedFooter from './containers/animatedFooter/animatedFooter';
+const App=()=> {
+  const [light,lightFn ] = useMachine(LightCheckbox, { devTools: true });
+  const multiform = React.useRef();
 
-const toggleMachine = createMachine({
-  initial: "untoggled",
-  context: {
-    count: 0
-  },
-  states: {
-    untoggled: {
-      on: { TOGGLE: "toggled" }
-    },
-    toggled: {
-      entry: assign({
-        count: context => context.count + 1
-      }),
-      on: {
-        TOGGLE: "untoggled"
-      },
-      after: {
-        1000: "untoggled"
-      }
-    }
+  const smoothScroll=(target)=> {
+    const { top } = target.getBoundingClientRect()
+    window.scrollTo({
+      top: top + window.pageYOffset,
+      behavior: "smooth"
+    });
   }
-});
-
-function App() {
-  const [state, send] = useMachine(toggleMachine, { devTools: true });
-  console.log(state);
-  const [toggled, setToggled] = useState(false);
-
   return (
-    // <div className="App">
-    //   <h1>{toggled ? "Toggled" : "Nope"}</h1>
-    //   <h2>
-    //     {state.value} ({state.context.count})
-    //   </h2>
-    //   <button
-    //     onClick={() => {
-    //       send("TOGGLE");
-    //     }}
-    //   >
-    //     Toggle
-    //   </button>
-    // </div>
-
+    <div>
     <div className='hero' >
-      <Header/>
-      <LampHOC/>
-      <MainTextHOC/>
+      <Header lightFn={lightFn} light={light}/>
+      <LampHOC stateLight={light}/>
+      <MainTextHOC smoothScroll={smoothScroll} multiform={multiform}/>
+      <AnimatedFooter/>
+    </div>
+    <div ref={multiform}>
+    <MultiFormHOC />
+    </div>
     </div>
   );
 }

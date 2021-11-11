@@ -1,14 +1,15 @@
 import React from 'react';
 import './mainTextHOC.css';
 
-const MainTextHOC=()=>{
+const MainTextHOC=({smoothScroll,multiform})=>{
 
     return(
         <div className="text-container">
-            <h1>A Application using XState and React  </h1>
+            <h1>An app using XState and React  </h1>
             <p>Explore XState library with React through a light state button with animanion and multi-step form</p>
-            <a href='/'>Contribute</a>
+            <a onClick={() => smoothScroll(multiform.current)}>Contribute</a>
         </div>
+
     )
 }
 

@@ -1,0 +1,36 @@
+.form__group {
+  padding: 60px;
+  text-align: center;
+}
+.form__question {
+  display: flex;
+  margin: 30px;
+  flex-direction: column;
+  width: 500px;
+  height: 300px;
+}
+.form__input {
+  border-radius: 5px;
+  border-color: #e5e5e5;
+  border-style: solid;
+  border-width: 0.5px;
+  margin-bottom: 25px;
+  padding: 20px;
+}
+
+.form__button {
+  border-radius: 10px;
+  color: white;
+  padding: 20px;
+  width: 150px;
+  height: 100px;
+  align-self: flex-end;
+  background-color: #273437;
+}
+
+.form__button:active {
+  background-color: #90afb6;
+}
+.form__button:hover {
+  background-color: #9fb4b9;
+}
