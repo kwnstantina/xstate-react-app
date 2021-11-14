@@ -2,6 +2,7 @@
   padding: 60px;
   text-align: center;
 }
+
 .form__question {
   display: flex;
   margin: 30px;
@@ -14,7 +15,7 @@
   border-color: #e5e5e5;
   border-style: solid;
   border-width: 0.5px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   padding: 20px;
 }
 
@@ -33,4 +34,22 @@
 }
 .form__button:hover {
   background-color: #9fb4b9;
+}
+
+.form__buttonTwo {
+  border-radius: 10px;
+  color: white;
+  padding: 20px;
+  width: 100px;
+  height: 70px;
+  align-self: flex-end;
+  background-color: #273437;
+}
+
+.form__error {
+  color: red;
+  margin-right: 200px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  position: relative;
 }

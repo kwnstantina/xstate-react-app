@@ -1,10 +1,10 @@
-import React, {useContext} from 'react';
+import React from 'react';
 
 
-const ProgressBar = () => {
-
-    const percent = 1 * 200;
-    const percentage = 1;
+const ProgressBar = (props) => {
+    const {page}=props;
+    const percent = page * 100;
+    const percentage = page;
 
     const background = {
         backgroundColor: '#dee2e6',
@@ -27,7 +27,7 @@ const ProgressBar = () => {
 
     return (
         <div>
-            <p style={text}>{percentage} of 2 completed</p>
+            <p style={text}>{percentage} of 4 completed</p>
             <div style={background}>
             <div style={progress}>
             </div>

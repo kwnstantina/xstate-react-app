@@ -1,4 +1,4 @@
-import React, { useState,useRef} from "react";
+import React from "react";
 import { useMachine } from "@xstate/react";
 import Header from "./containers/header/header";
 import './App.css';
@@ -7,6 +7,8 @@ import MainTextHOC from './containers/mainText/mainTextHOC'
 import { LightCheckbox } from "./models/statecharts/states";
 import MultiFormHOC from './containers/multiForm/multiFormHOC';
 import AnimatedFooter from './containers/animatedFooter/animatedFooter';
+import StaticFooter from "./containers/staticFooter/staticFooter";
+
 const App=()=> {
   const [light,lightFn ] = useMachine(LightCheckbox, { devTools: true });
   const multiform = React.useRef();
@@ -28,6 +30,7 @@ const App=()=> {
     </div>
     <div ref={multiform}>
     <MultiFormHOC />
+    <StaticFooter/>
     </div>
     </div>
   );

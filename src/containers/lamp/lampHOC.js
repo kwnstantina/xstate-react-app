@@ -6,9 +6,9 @@ const LampHOC=({stateLight})=>{
 
     return(
      <div className="lamp-container">
-         <img src={lamp} href="lamp" className="lamp"/>
+         <img src={lamp} href="lamp" className="lamp" alt="lamp"/>
          { stateLight.value==="swiched_on" && 
-         <img src={light} href="lamp" className="light"/>
+         <img src={light} href="lamp" className="light" alt="lamp" />
          }
      </div>
 );
