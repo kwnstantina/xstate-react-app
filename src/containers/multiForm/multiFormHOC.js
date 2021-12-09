@@ -11,31 +11,52 @@ import FormStepThree from '../../components/multiForm/formStepThree';
 const MultiFormHOC=()=> {
     const [current, nextStep] = useMachine(FormState);
     const [page,setPage]=useState(1);
-    console.log(current)
-
+    const [checkTotalNumber, setCheckTotalNumber] = useState(null);
     useEffect(()=>{
         if(current.matches('stepTwo')){
-            setPage(2)
+            setPage(2);
         }
         if(current.matches('stepThree') ){
-            setPage(3)
+            setPage(3);
         }
         if(current.matches('stepLast')){
-            setPage(4)
+            setPage(4);
         }
-       
-
-    },[current])
+    },[current,page]);
 
     return (
         <div className="form-container">
               <h3 className="form__title">Create your software team and join us!</h3>
               <div className="form__wrapper">
               <ProgressBar page={page}/>
-              {current.matches('stepOne') && <FormStepOne nextStep={nextStep} /> }      
-              {current.matches('stepTwo') &&  <FormStepTwo  nextStep={nextStep}/> }
-              {current.matches('stepThree') &&  <FormStepThree  nextStep={nextStep}/> }
-              {current.matches('stepLast') && <FormStepLast  nextStep={nextStep}/>}
+              {current.matches('stepOne') && 
+                 <FormStepOne
+                     nextStep={nextStep}
+                     checkTotalNumber={checkTotalNumber} 
+                     page={page} 
+                     setCheckTotalNumber={setCheckTotalNumber}
+                     current={current}
+                /> }      
+              {current.matches('stepTwo') && 
+                <FormStepTwo  
+                     nextStep={nextStep} 
+                     checkTotalNumber={checkTotalNumber} 
+                     page={page} 
+                     setPage={setPage} 
+                     current={current} 
+              />  }
+              {current.matches('stepThree') && 
+                <FormStepThree
+                    page={page} 
+                    nextStep={nextStep}
+                    setPage={setPage} 
+                /> }
+              {current.matches('stepLast') && 
+                <FormStepLast 
+                   nextStep={nextStep}
+                   current={current}  
+                   setPage={setPage}
+                />}
               </div>
         </div>
     )

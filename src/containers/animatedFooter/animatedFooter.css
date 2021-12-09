@@ -2,12 +2,12 @@
   position: relative;
   width: 24em;
   border-right: 2px solid rgba(255, 255, 255, 0.75);
-  font-size: 120%;
+  font-size: 12px;
   white-space: nowrap;
   overflow: hidden;
   transform: translateY(-50%);
-  margin-top: 30rem;
-  margin-left: 5rem;
+  margin-top: 3rem;
+  color: white;
 }
 
 .anim-typewriter {

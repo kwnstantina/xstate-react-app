@@ -16,6 +16,7 @@ nav .menu-img {
 nav .logo {
   width: 160px;
   cursor: pointer;
+  z-index: 100;
 }
 nav ul {
   flex: 1;
@@ -31,6 +32,7 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: #fff;
+  padding: 2px;
 }
 
 button {
@@ -64,4 +66,10 @@ button:focus {
 button span:focus {
   background: #d06582;
   margin-left: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  nav ul li a {
+    display: none;
+  }
 }

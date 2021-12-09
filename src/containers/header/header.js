@@ -24,7 +24,7 @@ const Header=(props)=>{
                <img src={menu} className="menu-img" alt="menu" />
                <img src={logo} className="logo"  alt="logo"  />
                <ul>
-                   <li><a href='/'>Re-toggle the bulb</a></li>
+                   <li><a href='/'>Toggle the bulb</a></li>
                </ul>
                <button type='button' onClick={()=>onClickAction(lightFn,light)}><span/></button>
            </nav>

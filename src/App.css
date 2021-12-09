@@ -1,7 +1,13 @@
 .hero {
-  min-height: 100vh;
+  min-height: 120vh;
   width: 100%;
   color: #fff;
   position: relative;
   background: #273437;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    min-height: 200vh;
+  }
 }
