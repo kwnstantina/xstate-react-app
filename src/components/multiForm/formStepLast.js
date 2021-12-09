@@ -10,10 +10,8 @@ const FormStepLast =({nextStep,current, setPage})=>  {
     const handleSubmit=()=>{
         nextStep("SUBMIT");
    }
-   console.log(current)
 
    const handlePreviousPage=()=>{
-    
     nextStep("PREVIOUS",{nextStep:current.context?.step});
     setPage(prev=>prev-1)
     navigate(-1);

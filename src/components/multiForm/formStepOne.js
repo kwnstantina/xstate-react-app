@@ -16,8 +16,6 @@ const  FormStepOne=(  {nextStep,checkTotalNumber,setCheckTotalNumber,page,curren
     },[data]);
 
  
-    console.log(current.context?.step)
-
     useEffect(()=>{   
         if(current.context.values && current.context.values.name ){
             send("INITIAL_VALUES", {initial:[{ 
@@ -37,7 +35,6 @@ const  FormStepOne=(  {nextStep,checkTotalNumber,setCheckTotalNumber,page,curren
 
     const handleSubmit=()=>{
         nextStep("NEXT",{totalNumber:checkTotalNumber,values:data.context?.values,step:checkTotalNumber});
-        //navigate(`/form/${page+1}`)
         navigate(`/form/${calculateNavigationStep(checkTotalNumber)}`)
     }
 

@@ -14,7 +14,6 @@ const FormStepThree=({nextStep,page})=> {
     
     const handleSubmit=()=>{
         nextStep("NEXT",{values:data.context?.values});
-        //thimisou na to dokimaseis navigate("form/$page")
         navigate(`/form/${page}`)
    }
 
