@@ -4,13 +4,16 @@ import {stepMachine} from '../../models/statecharts/states';
 import { useMachine } from "@xstate/react";
 import { useNavigate } from "react-router-dom";
 
-const FormStepThree=({nextStep,page})=> {
+const FormStepThree=({nextStep,page,current})=> {
     const [data, send] = useMachine(stepMachine);
     let navigate = useNavigate();
 
     const handleChange =(e)=>{
         send("CHANGE", { key: e.target.name, value: e.target.value });
     }
+        
+    console.log(current)
+    console.log(data)
     
     const handleSubmit=()=>{
         nextStep("NEXT",{values:data.context?.values});
@@ -18,7 +21,7 @@ const FormStepThree=({nextStep,page})=> {
    }
 
    const handlePreviousPage=()=>{
-    nextStep("PREVIOUS",{nextStep:2,stepTwoValues:data.context?.values,values:data.context?.values,step:page});
+    nextStep("PREVIOUS",{nextStep:2,stepTwoValues:data.context?.stepTwoValues,values:data.context?.stepTwoValues,step:page});
     navigate(-1);
 }
     return (

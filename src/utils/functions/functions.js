@@ -45,4 +45,3 @@ export const calculateNavigationStep=(totalPages)=>{
     return 2
   }
 }
-  

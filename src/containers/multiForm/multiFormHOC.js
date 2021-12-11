@@ -49,7 +49,8 @@ const MultiFormHOC=()=> {
                 <FormStepThree
                     page={page} 
                     nextStep={nextStep}
-                    setPage={setPage} 
+                    setPage={setPage}
+                    current={current} 
                 /> }
               {current.matches('stepLast') && 
                 <FormStepLast 

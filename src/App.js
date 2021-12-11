@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState,useCallback } from "react";
 import { useMachine } from "@xstate/react";
 import Header from "./containers/header/header";
 import './App.css';
@@ -8,11 +8,18 @@ import { LightCheckbox } from "./models/statecharts/states";
 import MultiFormHOC from './containers/multiForm/multiFormHOC';
 import StaticFooter from "./containers/staticFooter/staticFooter";
 import { useNavigate,} from "react-router-dom";
+import useScrollEffect from "./hooks/useScrollEffect";
 
 const App=()=> {
   const [light,lightFn ] = useMachine(LightCheckbox, { devTools: true });
   const multiform = React.useRef();
   let navigate = useNavigate();
+  let detectScrollTop=useScrollEffect();
+  useEffect(()=>{
+    if(detectScrollTop){
+      navigate('/')
+    }
+  },[detectScrollTop])
 
   const smoothScroll=(target)=> {
     const { top } = target.getBoundingClientRect()

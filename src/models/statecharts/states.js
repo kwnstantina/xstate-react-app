@@ -137,11 +137,14 @@ export const FormState=createMachine({
           step:(ctx, e)=> e.totalNumber==='1'? "4":"2",
         }),
         validateStepTwoValues:assign({
-          stepTwoValues:(e)=>e.values,
+         // stepTwoValues:(ctx,e)=>{return {...ctx.stepTwoValues,stepTwoValues:e.values}},
+          stepTwoValues:(ctx,e)=>e.values,
+          values:(e)=>e.values,
           step:3,      
         }),
         validateStepThreeValues:assign({
           stepThreeValues:(ctx,e)=>e.values,
+          values:(e)=>e.values,
           step:4,
         
         }),
@@ -150,7 +153,7 @@ export const FormState=createMachine({
           loading:false,
      }),
       previousStep: assign({
-       stepTwoValues:(ctx,e)=>e.stepTwoValues,
+       stepTwoValues:(ctx,e)=>ctx.stepTwoValues,
        values:(ctx,e)=>ctx.values,
        step:(ctx)=>ctx.step-1
     }),
@@ -216,25 +219,38 @@ export const stepMachine = createMachine({
                      name:cur.value,
                      ...obj
                    }
-                  }else
-                  if(cur.key==='email'){
+                  }
+                  else if(cur.key==='email'){
                     return{            
                       email:cur.value,
                       ...obj
                     }
-                   }else
-                   if(cur.key==='phoneNumber'){
+                   }
+                   else if(cur.key==='phoneNumber'){
                     return{ 
                       ...obj,
                       phoneNumber: cur.value
                     }
-                   }else
-                   if(cur.key==='totalMembers'){
+                   }
+                   else  if(cur.key==='totalMembers'){
                     return{ 
                       ...obj,
                        totalMembers:cur.value
                     }
                    }
+                   else if(cur.key==='secondFriendName'){
+                      return{ 
+                        ...obj,
+                        secondFriendName:cur.value
+                      }
+                   }
+                   else if(cur.key==='secondFriendEmail'){
+                    return{ 
+                      ...obj,
+                      secondFriendEmail:cur.value
+                    }
+                 }
+                  
                  } ,{})                 
                  }
                 })
