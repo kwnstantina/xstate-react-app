@@ -3,7 +3,7 @@
   width: 100%;
   color: #fff;
   position: relative;
-  background: #273437;
+  background: linear-gradient(to left top, #2a4c54, #273437);
 }
 
 @media only screen and (max-width: 768px) {

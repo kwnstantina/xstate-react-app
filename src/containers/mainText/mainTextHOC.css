@@ -2,19 +2,17 @@
   max-width: 800px;
   margin-top: 14%;
   margin-left: 50%;
-  text-indent: 0.5em;
+  width: 500px;
 }
 
 .text-container h1 {
   font-size: 60px;
-  font-weight: 400;
   margin-bottom: 20px;
-  text-indent: 0.2em;
 }
 
 .text-container a {
   text-decoration: none;
-  background: #d06582;
+  background: radial-gradient(#d06582, #fa99b2);
   padding: 14px 40px;
   display: inline-block;
   color: #fff;
@@ -45,6 +43,18 @@
     margin-left: 10%;
     text-align: center;
     text-indent: 0px;
+  }
+
+  .text-container h1 {
+    text-indent: 0px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .text-container {
+    max-width: 300px;
+    margin-top: 700px;
+    text-align: left;
   }
 
   .text-container h1 {

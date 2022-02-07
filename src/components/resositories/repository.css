@@ -1,0 +1,80 @@
+.repository__wrapper {
+  margin-top: 10rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 300px;
+}
+
+.repository {
+  width: 100%;
+  color: black;
+  box-shadow: -30px -20px rgb(0 0 0 / 60%);
+}
+
+.repository__image {
+  width: 100%;
+  height: 150px;
+}
+
+.repository__image img {
+  width: fit-content;
+  height: 100%;
+  object-fit: cover;
+}
+
+.repository__body {
+  padding: 10px 5px;
+  width: 92%;
+  backdrop-filter: blur(5px);
+}
+
+.repository__title {
+  font-size: 16px;
+}
+
+.repository__creator {
+  font-size: 16px;
+  margin-top: 6px;
+  font-weight: bold;
+}
+
+.repository__button {
+  margin: 30px;
+  margin-left: 165px;
+}
+
+.repository__button a {
+  text-decoration: none;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  padding: 0px 15px;
+  background: #fa99b2;
+  color: white;
+  border-radius: 4px;
+  outline: none;
+  text-transform: capitalize;
+}
+
+.repository__next {
+  cursor: pointer;
+  display: inline;
+  z-index: 100;
+  left: 215px;
+  top: 110px;
+  position: absolute;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  border: none;
+  transition-duration: 0.4s;
+}
+.repository__next {
+  background-color: #555555;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 600px) {
+}

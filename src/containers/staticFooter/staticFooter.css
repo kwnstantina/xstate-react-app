@@ -1,10 +1,9 @@
 .footer__distributed {
-  background-color: #292c2f;
+  background: linear-gradient(to left top, #2a4c54, #273437);
   box-shadow: 0 1px 1px 0 #273437;
   box-sizing: border-box;
   width: 100%;
   text-align: left;
-  font: normal 16px sans-serif;
   padding: 45px 50px;
 }
 

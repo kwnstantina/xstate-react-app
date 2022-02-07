@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  alignitems: center;
+}
+
+.heading {
+  line-height: 2;
+  font-size: 20px;
+  margin: 10px;
+}
